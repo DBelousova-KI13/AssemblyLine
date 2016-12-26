@@ -13,21 +13,27 @@ namespace AssemblyLine.Console
         {
             //вариант 7
             //int[] FirstManufacture = new[] { 1, 3, 2, 1, 3, 2, 2, 1 };
-            //int[] SameManufacture = new[] { 1, 3, 2, 1, 3, 2, 2, 1 };
+            //int[] SameManufacture  = new[] { 1, 3, 2, 1, 3, 2, 2, 1 };
             //int[] SecondMnufacture = new[] { 1, 2, 2, 3, 2, 1, 2, 2 };
             //int[] ThirdManufacture = new[] { 1, 1, 2, 2, 1, 3, 3, 1 };
 
             //вариант 2
             //int[] FirstManufacture = new[] { 1, 1, 2, 3, 3, 1, 1, 3 };
-            //int[] SameManufacture = new[] { 1, 1, 2, 3, 3, 1, 1, 3 };
+            //int[] SameManufacture  = new[] { 1, 1, 2, 3, 3, 1, 1, 3 };
             //int[] SecondMnufacture = new[] { 1, 2, 3, 3, 1, 2, 3, 1 };
             //int[] ThirdManufacture = new[] { 1, 2, 1, 2, 3, 3, 3, 1 };
 
+            //вариант 4
+            int[] FirstManufacture = new[] { 1, 2, 1, 2, 3, 3, 3, 1 };
+            int[] SameManufacture  = new[] { 1, 2, 1, 2, 3, 3, 3, 1 };
+            int[] SecondMnufacture = new[] { 1, 2, 3, 2, 3, 1, 1, 2 };
+            int[] ThirdManufacture = new[] { 1, 2, 1, 2, 3, 3, 3, 1 }; // это не запускать
+
             //вариант 5
-            int[] FirstManufacture = new[] { 1, 2, 3, 2, 3, 1, 1, 2 };
-            int[] SameManufacture = new[] { 1, 2, 3, 2, 3, 1, 1, 2 };
-            int[] SecondMnufacture = new[] { 1, 2, 1, 2, 3, 2, 2, 2 };
-            int[] ThirdManufacture = new[] { 1, 2, 1, 2, 3, 3, 3, 1 };
+            //int[] FirstManufacture = new[] { 1, 2, 3, 2, 3, 1, 1, 2 };
+            //int[] SameManufacture  = new[] { 1, 2, 3, 2, 3, 1, 1, 2 };
+            //int[] SecondMnufacture = new[] { 1, 2, 1, 2, 3, 2, 2, 2 };
+            //int[] ThirdManufacture = new[] { 1, 2, 1, 2, 3, 3, 3, 1 };
 
 
             System.Console.WriteLine("Первое изделие");
@@ -45,14 +51,14 @@ namespace AssemblyLine.Console
                 {
                     if ((i + j) < SameManufacture.Length)
                     {
-                        if (FirstManufacture[((i + j)%8)] != SameManufacture[j])
+                        if (FirstManufacture[((i + j) % 8)] != SameManufacture[j])
                         {
                             isImpact = false;
                         }
                         else
                         {
                             isImpact = true;
-                            System.Console.WriteLine("В случае итерации {0} столкновение на {1} этапе", i, (i + j)%8);
+                            System.Console.WriteLine("В случае итерации {0} столкновение на {1} этапе", i, (i + j) % 8);
                             break;
                         }
                     }
@@ -72,7 +78,7 @@ namespace AssemblyLine.Console
                     steps.Add(i);
                     strategy.Add(l);
                     System.Console.WriteLine("на {0}-м такте можно начать работу со следующим изделием, латентность = {1}", i, l);
-                    
+
                 }
             }
             if (strategy.Count == 0)
@@ -91,7 +97,7 @@ namespace AssemblyLine.Console
                 {
                     if ((i + j) < SecondMnufacture.Length)
                     {
-                        if (FirstManufacture[((i + j)%8)] != SecondMnufacture[j])
+                        if (FirstManufacture[((i + j) % 8)] != SecondMnufacture[j])
                         {
                             isImpact = false;
                         }
